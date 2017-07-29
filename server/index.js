@@ -3,6 +3,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
+const CalRawData = require('../CalEnviroScreenRawData.json');
 
 
 const app = express();
@@ -22,6 +23,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/dashboard', (req, res) => {
+  console.log('CalRawData', CalRawData[0])
   res.sendFile(path.join(__dirname, '/../react-client/dist/index.html'));
 })
 

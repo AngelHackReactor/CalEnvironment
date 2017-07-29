@@ -37,6 +37,11 @@ body:after {
   font-weight: 200;
 }
 
+.dashboard-bg {
+  background: whitesmoke;
+  height: 100vh;
+  width: 100vw;
+}
 
 /* ==============================
  * CSS Utility

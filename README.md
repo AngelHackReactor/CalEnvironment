@@ -1,5 +1,10 @@
 # AngelHackReactor
 
+## Team Members
+- [Alan Zheng](https://www.linkedin.com/in/aszheng/)
+- [Jeffrey Chen](https://www.linkedin.com/in/jeffrey-chen/)
+- [Jim Lee](https://www.linkedin.com/in/jimleeisme/)
+- [Jon Eric Escobedo](https://www.linkedin.com/in/jonericescobedo/)
 
 ## To Run
 ```

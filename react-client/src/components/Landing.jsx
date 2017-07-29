@@ -12,6 +12,7 @@ class Landing extends React.Component {
   handleSearch() {
     window.location = '/dashboard'
   }
+  
   render() {
     return (
       <div>

@@ -11,22 +11,20 @@ class Landing extends React.Component {
       <div>
         <div className="container">
           
-          <div className="row">
-            <div className="col-sm-12 text-center">
-              <h1 className="display-1">CalEnviro</h1>
-            </div>
-          </div>
-
-          <div className="row">
-            <div className="col-sm-6 offset-sm-3">
-              <div className="input-group">
-                <input type="text" className="form-control" placeholder="Address"/>
-                <span className="input-group-btn">
-                  <button className="btn btn-secondary" type="button">Go!</button>
-                </span>
+            <div className="row h-50">
+              <div className="col-sm-12 text-center my-auto">
+                <h1 className="hero display-4">SAFE CALIFORNIA</h1>
+                <p className="slogan">Search your neighborhood.</p>
+              </div>
+              <div className="col-sm-6 offset-sm-3">
+                <div className="input-group">
+                  <input type="text" className="form-control" placeholder="Address"/>
+                  <span className="input-group-btn">
+                    <button className="btn btn-default" type="button">Go!</button>
+                  </span>
+                </div>
               </div>
             </div>
-          </div>
 
         </div>
       </div>

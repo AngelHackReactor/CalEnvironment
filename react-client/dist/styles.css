@@ -1,0 +1,26 @@
+/*https://res.cloudinary.com/jescobedo/image/upload/v1501363868/el-cap-compressor_vx0g6e.jpg*/
+body {
+  font-family: 'Raleway', sans-serif;
+  background: black;
+  color: white;
+}
+
+body:after {
+  content: "";
+  position: fixed;
+  top: 0;       
+  height: 100vh;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  opacity: 0.5;
+  background: url('https://res.cloudinary.com/jescobedo/image/upload/v1501363868/el-cap-compressor_vx0g6e.jpg') center center;
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover; 
+}
+
+.shade {
+  background: rgba(0, 0, 0, 0.5);
+}

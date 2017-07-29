@@ -54,8 +54,3 @@ body:after {
 .shade {
   background: rgba(0, 0, 0, 0.5);
 }
-
-
-.card-deck {
-  margin-top: 100px;
-}

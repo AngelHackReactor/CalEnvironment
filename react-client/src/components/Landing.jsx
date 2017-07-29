@@ -17,7 +17,6 @@ class Landing extends React.Component {
     return (
       <div>
         <div className="container">
-
             <div className="row h-50">
               <div className="col-sm-12 text-center my-auto">
                 <h1 className="hero display-4">SAFE CALIFORNIA</h1>

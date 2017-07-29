@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Air from './cards/Air.jsx';
 import Water from './cards/Water.jsx';
 import Waste from './cards/Waste.jsx';
+import Navbar from './Navbar.jsx';
 
 
 const style = {
@@ -18,6 +19,7 @@ class Dashboard extends React.Component {
   }
   render() {
     return (
+
       <div className="dashboard-bg">
         <div className="container">
           <div className="cards">

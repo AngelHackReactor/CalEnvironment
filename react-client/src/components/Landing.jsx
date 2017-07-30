@@ -110,8 +110,10 @@ class Landing extends React.Component {
           </div>
         </section>
 
-        <footer>
-          
+        <footer className="footer">
+          <div className="container">
+            <span className="text-muted">Safe California</span>
+          </div>
         </footer>
 
       </div>

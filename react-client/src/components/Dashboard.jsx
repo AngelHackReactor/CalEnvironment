@@ -19,19 +19,6 @@ class Dashboard extends React.Component {
 
   render() {
     return (
-<<<<<<< HEAD
-=======
-      <div className="container">
-
-        <div className="card-deck">
-          <div className="card" style={style.cards}>
-            <img className="card-img-top" src="//placehold.it/800x400" alt="Card image cap"/>
-            <div className="card-block">
-              <h4 className="card-title">{String(this.props.location)}</h4>
-              <p className="card-text"></p>
-            </div>
-          </div>
->>>>>>> (feat) Add redux
 
       <div className="dashboard-bg">
         <Navbar />

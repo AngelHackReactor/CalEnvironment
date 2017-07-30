@@ -20,10 +20,10 @@ var config = {
             presets: ['react', 'es2015']
          }
       },
-      { 
-        test: /\.png$/, 
+      {
+        test: /\.png$/,
         loader: 'file',
-        include: './'
+        include: '/'
       }
     ]
   }

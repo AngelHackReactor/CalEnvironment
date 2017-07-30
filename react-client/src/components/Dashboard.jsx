@@ -8,7 +8,6 @@ import Waste from './cards/Waste.jsx';
 import Navbar from './Navbar.jsx';
 import HeatMap from './cards/HeatMap.jsx';
 import {ShareButtons, generateShareIcon} from 'react-share';
-import Icon from 'react-simple-icons'
 
 const {TwitterShareButton} = ShareButtons;
 const TwitterIcon = generateShareIcon('twitter');

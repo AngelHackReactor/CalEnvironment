@@ -16,23 +16,29 @@ class Landing extends React.Component {
   render() {
     return (
       <div>
-        <div className="container">
-            <div className="row h-50">
-              <div className="col-sm-12 text-center my-auto">
-                <h1 className="hero display-4">SAFE CALIFORNIA</h1>
-                <p className="slogan">Search your neighborhood.</p>
-              </div>
-              <div className="col-sm-6 offset-sm-3">
-                <div className="input-group">
-                  <input type="text" className="form-control" placeholder="Address"/>
-                  <span className="input-group-btn">
-                    <button className="btn btn-default" onClick={this.handleSearch.bind(this)} type="button">Go!</button>
-                  </span>
+
+        {/* Full page bg with mask */}
+        <div className="view hm-stylish-strong">
+          <div className="full-pg-img">
+            <div className="mask">
+              <h1 className="hero display-4 text-center">SAFE CALIFORNIA</h1>
+              <p className="slogan text-center">Search your neighborhood.</p>
+              <div className="container">
+                <div className="row">
+                  <div className="col-sm-6 offset-sm-3">
+                    <div className="input-group">
+                      <input type="text" className="form-control" placeholder="Check your home..."/>
+                      <span className="input-group-btn">
+                        <button className="btn btn-default" onClick={this.handleSearch.bind(this)} type="button">Go!</button>
+                      </span>
+                    </div>
+                  </div>                                    
                 </div>
               </div>
             </div>
-
+          </div>
         </div>
+        
       </div>
     )
   }

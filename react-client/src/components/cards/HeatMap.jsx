@@ -1,35 +1,44 @@
-import React from 'react';
+/// app.js
+import React, {Component} from 'react';
+import MapGL from 'react-map-gl';
+import DeckGL, {LineLayer} from 'deck.gl';
 import { connect } from 'react-redux';
 import { getData } from '../../actions';
 
-import MapGL from 'react-map-gl';
+// Set your mapbox access token here
+// Viewport settings that is shared between mapbox and deck.gl
+const viewport = {
+   longitude: -100,
+   latitude: 40.7,
+   zoom: 5,
+   pitch: 60,
+   bearing: 20
+}
 
-
-
+const colorScale = r => [r * 255, 140, 200 * (1 - r)];
+// Data to be used by the LineLayer
+const data = [
+  {sourcePosition: [-122.41669, 37.7853], targetPosition: [-122.41669, 37.781]}
+];
 
 class HeatMap extends React.Component {
 
   render() {
+
     return (
-      <div>
-        <MapGL
-          width={400}
-          height={400}
-          latitude={37.7577}
-          longitude={-122.4376}
-          zoom={8}
-          />
-      </div>
-    )
+      <MapGL {...viewport}
+        mapStyle="mapbox://styles/mapbox/dark-v9"
+        mapboxApiAccessToken={"pk.eyJ1IjoiamVmZmMxMiIsImEiOiJjajVxc2Q5bzcwbjRnMzNzZDZ5dTVwemh5In0.VLNgP3mIY1ufVRmjPz7-eA"}
+        perspectiveEnabled={true}>
+        <DeckGL {...viewport} layers={[
+          new LineLayer({id: 'line-layer', data})
+        ]} />
+      </MapGL>
+    );
   }
-
 }
-
-
-
-const mapStateToProps = ({ data, location }) => {
+const mapStateToProps = ({ location }) => {
   return {
-    data: data.data,
     location: location.location
   }
 }

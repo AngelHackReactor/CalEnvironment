@@ -8,6 +8,8 @@ import Waste from './cards/Waste.jsx';
 import Navbar from './Navbar.jsx';
 import HeatMap from './cards/HeatMap.jsx';
 import {ShareButtons, generateShareIcon} from 'react-share';
+import Loader from 'halogen/GridLoader';
+
 
 const {TwitterShareButton} = ShareButtons;
 const TwitterIcon = generateShareIcon('twitter');
@@ -35,7 +37,7 @@ class Dashboard extends React.Component {
       let groundwater_PCT = this.props.location.groundwater_threat_percentile
       let hazWaste_PCT = this.props.location.hazardous_waste_percentile
       let solWaste_PCT = this.props.location.solid_waste_percentile
-      
+
       return (
         <div className="dashboard-margin">
           <Navbar />
@@ -153,12 +155,24 @@ class Dashboard extends React.Component {
                               <h1>0.06</h1>
                             </div>
                           </div>
+<<<<<<< HEAD
                         </div>
                         <p>Sum of weighted haz waste sites/facilities within buffered distances to populated blocks</p>                          
                     </div>
                 </div>
               </div>
+=======
+                       </div>
+                     </div>
+                    </div>
+                  </div>
+            </div>
+>>>>>>> Staging for rebase
 
+            {/* Waste Card */}
+            <div className="container map">
+              <HeatMap />
+            </div>
 
             {/* twitter share */}
             <TwitterShareButton
@@ -173,7 +187,11 @@ class Dashboard extends React.Component {
         </div>
       )
     } else {
-      return (<div>Loading...</div>)
+      return (
+        <div className="loading">
+          <Loader color="#26A65B" size="20px"/>
+        </div>
+      )
     }
   }
 }

@@ -9,8 +9,8 @@ class Waste extends React.Component {
 
   componentDidMount() {
   console.log('this.props.location', this.props.location)
-  this.props.getData(this.props.location);    
-  
+  this.props.getData(this.props.location);
+
   let chart = c3.generate({
     bindto: '#waste',
     data: {

@@ -17,12 +17,10 @@ const style = {
   }
 }
 
-
 class Dashboard extends React.Component {
 
   render() {
 
-    const title = 'GitHub';
     return (
 
       <div className="dashboard-bg">

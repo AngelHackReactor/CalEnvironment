@@ -154,6 +154,10 @@ body {
   font-weight: 200;
 }
 
+.dashboard-margin {
+  margin-bottom: 125px;
+}
+
 /* ==============================
  * MOBILE SPECIFIC PARAMS
  * ============================== */

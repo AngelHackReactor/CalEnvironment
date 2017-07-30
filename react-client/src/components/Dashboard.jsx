@@ -37,13 +37,13 @@ class Dashboard extends React.Component {
       let solWaste_PCT = this.props.location.solid_waste_percentile
       
       return (
-        <div className="dashboard-bg">
+        <div className="dashboard-margin">
           <Navbar />
 
           <div className="container">
 
               <div className="jumbotron city-name">
-                <h1>{this.props.location.city} , {this.props.location.county} County</h1>
+                <h1>{this.props.location.city}, {this.props.location.county} County</h1>
                 <h3>Census Tract ID: {this.props.location.census_tract_id}</h3>
               </div>
 
@@ -133,7 +133,7 @@ class Dashboard extends React.Component {
 
                   <div className="card card-waste text-center" style={style.cards}>
                     <h4 className="card-title"></h4>
-                    <p className="card-text"> Solid Waste </p>
+                    <p className="card-text"> Hazardous Waste </p>
                     <div className="card-block">
                       <Waste />
                     </div>
@@ -154,7 +154,7 @@ class Dashboard extends React.Component {
                             </div>
                           </div>
                         </div>
-                        <p>Sum of weighted solid waste sites/facilities within buffered distances to populated blocks</p>                          
+                        <p>Sum of weighted haz waste sites/facilities within buffered distances to populated blocks</p>                          
                     </div>
                 </div>
               </div>

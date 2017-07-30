@@ -14,7 +14,7 @@ const styles = {
 };
 
 const validAddress = value => {
-  if (!(value && /^\d+\s[A-z0-9]+\s[A-z]+,\s[A-z]+/.test(value))) {
+  if (!(value && /^\d+\s[A-z0-9\s]+\s[A-z]+,\s[A-z]+/.test(value))) {
     return 'Please enter a street address followed by a comma and the city';
   } else {
     return undefined;
@@ -84,7 +84,9 @@ class Landing extends React.Component {
                         <button
                           className="btn btn-default"
                           type="submit"
-                        >Go</button>
+                        >
+                          Go
+                        </button>
                       </span>
                       <this.useGPS
                         geoloc={this.props.geoloc}
@@ -102,7 +104,7 @@ class Landing extends React.Component {
           <h2 className="text-center custom-font">ABOUT</h2>
           <br/>
           <br/>
-          <div className="text-center secondary-text">
+          <div className="text-center secondary-text custom-font">
             <p>Safe California seeks to empower citizens and make Environmental Health Screening information easily accessible.
             We believe that all Californians deserve to be informed on the state of the environment around their homes, schools, 
             and workplaces in an easy and highly accessible manner.</p>
@@ -112,7 +114,7 @@ class Landing extends React.Component {
 
         <footer className="footer">
           <div className="container">
-            <span className="text-muted">Safe California</span>
+            <span>Safe California 2017</span>
           </div>
         </footer>
 

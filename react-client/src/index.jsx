@@ -1,20 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import promise from 'redux-promise';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import reducers from './reducers';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
 import Landing from './components/Landing.jsx';
 import Dashboard from './components/Dashboard.jsx';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 
+const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
+
+const store = createStoreWithMiddleware(reducers,
+  typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  );
+
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+
   render() {
     return (
       <Router>
-        <div>
-          <Route exact path="/" component={Landing}/>
-          <Route path="/dashboard" component={Dashboard}/>
-        </div>
+        <MuiThemeProvider>
+          <div>
+            <Route exact path="/" component={Landing}/>
+            <Route path="/dashboard" component={Dashboard}/>
+          </div>
+        </MuiThemeProvider>
       </Router>
     )
   }
@@ -22,4 +36,10 @@ class App extends React.Component {
 
 
 
-ReactDOM.render(<App/>, document.getElementById('app'));
+ReactDOM.render(
+  <Provider store={store}>
+    <div>
+      <App/>
+    </div>
+  </Provider>,
+  document.getElementById('app'));

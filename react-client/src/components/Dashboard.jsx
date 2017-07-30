@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { connect } from 'react-redux';
+import { getData } from '../actions';
 import Air from './cards/Air.jsx';
 import Water from './cards/Water.jsx';
 import Waste from './cards/Waste.jsx';
@@ -14,9 +16,7 @@ const style = {
 
 
 class Dashboard extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+
   render() {
     return (
 
@@ -75,5 +75,10 @@ class Dashboard extends React.Component {
   }
 }
 
+const mapStateToProps = ({ location }) => {
+  return {
+    location: location.location
+  }
+}
 
-export default Dashboard;
+export default connect(mapStateToProps, { getData })(Dashboard);

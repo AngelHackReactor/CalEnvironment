@@ -10,5 +10,6 @@ router.get('/', (req, res) => {
 router.get('/dashboard', controller.dashboard)
 router.get('/landing', controller.landing)
 router.post('/getCensusTract', controller.getCensusTract)
+router.get('/dataRetrieval', controller.getData);
 
 module.exports = router;

@@ -21,15 +21,16 @@ const data = [
 
 class HeatMap extends React.Component {
 
-  componentDidMount() {
-    console.log(this.props.location);
+  componentWillMount() {
+    console.log('here',this.props);
   }
+
   render() {
 
     return (
       <MapGL {...viewport}
-        longitude= {144}
-        latitude= {40.7}
+        longitude= {this.props.lon}
+        latitude= {this.props.lat}
         minWidth={300}
         mapStyle="mapbox://styles/mapbox/streets-v9"
         mapboxApiAccessToken={"pk.eyJ1IjoiamVmZmMxMiIsImEiOiJjajVxc2Q5bzcwbjRnMzNzZDZ5dTVwemh5In0.VLNgP3mIY1ufVRmjPz7-eA"}
@@ -43,7 +44,9 @@ class HeatMap extends React.Component {
 }
 const mapStateToProps = ({ location }) => {
   return {
-    location: location.location
+    location: location.location,
+    lat: location.location.lat,
+    lon: location.location.lon
   }
 }
 

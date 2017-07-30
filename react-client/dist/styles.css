@@ -159,6 +159,14 @@ body {
 }
 
 /* ==============================
+ * Footer properties
+ * ============================== */
+ .font-thinner {
+  font-weight: 200;
+  letter-spacing: 0.2em;
+ }
+
+/* ==============================
  * MOBILE SPECIFIC PARAMS
  * ============================== */
 @media only screen and (max-width: 768px) {

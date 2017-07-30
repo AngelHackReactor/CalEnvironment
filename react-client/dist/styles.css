@@ -151,3 +151,14 @@
   left: 75;
   bottom: 20;
 }
+
+.loading {
+  position: fixed; /* or absolute */
+  top: 30%;
+  left: 45%;
+
+}
+
+.map {
+  top: 100px;
+}

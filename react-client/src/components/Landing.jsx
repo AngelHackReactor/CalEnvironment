@@ -59,7 +59,7 @@ class Landing extends React.Component {
                         >Go</button>
                       </span>
                     </form>
-                  </div>                                    
+                  </div>
                 </div>
               </div>
             </div>

@@ -8,8 +8,6 @@ import { getData } from '../../actions';
 // Set your mapbox access token here
 // Viewport settings that is shared between mapbox and deck.gl
 const viewport = {
-   longitude: -100,
-   latitude: 40.7,
    zoom: 5,
    pitch: 60,
    bearing: 20
@@ -23,11 +21,17 @@ const data = [
 
 class HeatMap extends React.Component {
 
+  componentDidMount() {
+    console.log(this.props.location);
+  }
   render() {
 
     return (
       <MapGL {...viewport}
-        mapStyle="mapbox://styles/mapbox/dark-v9"
+        longitude= {144}
+        latitude= {40.7}
+        minWidth={300}
+        mapStyle="mapbox://styles/mapbox/streets-v9"
         mapboxApiAccessToken={"pk.eyJ1IjoiamVmZmMxMiIsImEiOiJjajVxc2Q5bzcwbjRnMzNzZDZ5dTVwemh5In0.VLNgP3mIY1ufVRmjPz7-eA"}
         perspectiveEnabled={true}>
         <DeckGL {...viewport} layers={[

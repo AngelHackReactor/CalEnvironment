@@ -182,3 +182,13 @@ body {
 .shade {
   background: rgba(0, 0, 0, 0.5);
 }
+
+.map {
+  top: 100px;
+}
+
+.loading {
+  position:fixed;
+  left: 45%;
+  top: 40%; 
+}

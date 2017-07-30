@@ -8,6 +8,8 @@ import Waste from './cards/Waste.jsx';
 import Navbar from './Navbar.jsx';
 import HeatMap from './cards/HeatMap.jsx';
 import {ShareButtons, generateShareIcon} from 'react-share';
+import Loader from 'halogen/GridLoader';
+
 
 const {TwitterShareButton} = ShareButtons;
 const TwitterIcon = generateShareIcon('twitter');
@@ -18,6 +20,21 @@ const style = {
 }
 
 class Dashboard extends React.Component {
+  constructor (props) {
+    super(props);
+    this.state = {
+      mapped:false
+    }
+  }
+
+  componentDidMount() {
+    let context = this;
+    setTimeout(() => {
+      context.setState({
+        mapped:true
+      })
+    },4300)
+  }
 
   render() {
     if (this.props.location) {
@@ -35,7 +52,7 @@ class Dashboard extends React.Component {
       let groundwater_PCT = this.props.location.groundwater_threat_percentile
       let hazWaste_PCT = this.props.location.hazardous_waste_percentile
       let solWaste_PCT = this.props.location.solid_waste_percentile
-      
+
       return (
         <div className="dashboard-margin">
           <Navbar />
@@ -61,7 +78,7 @@ class Dashboard extends React.Component {
                     <div className="card-block">
                       <Air />
                     </div>
-                    <p class="card-text">Your tract is better than {(100-pm25_PCT).toFixed(2)}% of the state</p>                    
+                    <p class="card-text">Your tract is better than {(100-pm25_PCT).toFixed(2)}% of the state</p>
                   </div>
 
                     <div className="card card-air text-center" style={style.cards}>
@@ -95,7 +112,7 @@ class Dashboard extends React.Component {
 
                   <div className="card card-water text-center" style={style.cards}>
                     <h4 className="card-title"></h4>
-                    <p className="card-text"> Drinking Water </p>                    
+                    <p className="card-text"> Drinking Water </p>
                     <div className="card-block">
                       <Water />
                     </div>
@@ -116,7 +133,7 @@ class Dashboard extends React.Component {
                             </div>
                           </div>
                         </div>
-                        <p>Drinking water contaminant index for selected contaminants</p>                          
+                        <p>Drinking water contaminant index for selected contaminants</p>
                      </div>
                 </div>
               </div>
@@ -153,17 +170,23 @@ class Dashboard extends React.Component {
                               <h1>0.06</h1>
                             </div>
                           </div>
+
                         </div>
-                        <p>Sum of weighted haz waste sites/facilities within buffered distances to populated blocks</p>                          
+                        <p>Sum of weighted haz waste sites/facilities within buffered distances to populated blocks</p>
                     </div>
                 </div>
               </div>
 
 
+            {/* Map Card */}
+            <div className="container map">
+              {this.state.mapped ? <HeatMap /> : null}
+            </div>
+
             {/* twitter share */}
             <TwitterShareButton
-              url={'bestfitsearch.info'}
-              title={`San Francisco, CA has an AVERAGE health score according to CalEnvironment.com`}
+              url={'google.com'}
+              title={this.props.location.city+` has an AVERAGE health score according to CalEnvironment.com`}
               className="share-button">
              <TwitterIcon size={45} round />
             </TwitterShareButton>
@@ -173,7 +196,11 @@ class Dashboard extends React.Component {
         </div>
       )
     } else {
-      return (<div>Loading...</div>)
+      return (
+        <div className="loading">
+          <Loader color="#26A65B" size="20px"/>
+        </div>
+      )
     }
   }
 }

@@ -94,7 +94,7 @@ class Landing extends React.Component {
                         submitCoords={this.submitCoords.bind(this)}
                       />
                     </form>
-                  </div>                                    
+                  </div>
                 </div>
               </div>
             </div>

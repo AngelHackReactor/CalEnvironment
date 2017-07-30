@@ -1,36 +1,44 @@
-import React from 'react';
+/// app.js
+import React, {Component} from 'react';
+import MapGL from 'react-map-gl';
+import DeckGL, {LineLayer} from 'deck.gl';
 import { connect } from 'react-redux';
 import { getData } from '../../actions';
 
-import MapGL from 'react-map-gl';
-
-
-
+// Set your mapbox access token here
+// Viewport settings that is shared between mapbox and deck.gl
+const viewport = {
+   zoom: 12,
+   pitch: 60,
+   bearing: 20
+}
 
 class HeatMap extends React.Component {
 
-  render() {
-    return (
-      <div>
-        <MapGL
-          width={400}
-          height={400}
-          latitude={37.7577}
-          longitude={-122.4376}
-          zoom={8}
-          />
-      </div>
-    )
+  componentWillMount() {
+    console.log('here',this.props);
   }
 
+  render() {
+
+    return (
+      <MapGL {...viewport}
+        longitude= {this.props.lon}
+        latitude= {this.props.lat}
+        Width={500}
+        height={400}
+        mapStyle="mapbox://styles/mapbox/streets-v9"
+        mapboxApiAccessToken={"pk.eyJ1IjoiamVmZmMxMiIsImEiOiJjajVxc2Q5bzcwbjRnMzNzZDZ5dTVwemh5In0.VLNgP3mIY1ufVRmjPz7-eA"}
+        perspectiveEnabled={true}>
+      </MapGL>
+    );
+  }
 }
-
-
-
-const mapStateToProps = ({ data, location }) => {
+const mapStateToProps = ({ location }) => {
   return {
-    data: data.data,
-    location: location.location
+    location: location.location,
+    lat: location.lat,
+    lon: location.lon
   }
 }
 

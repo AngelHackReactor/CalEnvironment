@@ -6,11 +6,13 @@ import Air from './cards/Air.jsx';
 import Water from './cards/Water.jsx';
 import Waste from './cards/Waste.jsx';
 import Navbar from './Navbar.jsx';
+import {ShareButtons, generateShareIcon} from 'react-share';
 
+const {TwitterShareButton} = ShareButtons;
+const TwitterIcon = generateShareIcon('twitter');
 
 const style = {
   cards: {
-
   }
 }
 
@@ -18,13 +20,16 @@ const style = {
 class Dashboard extends React.Component {
 
   render() {
+
+    const title = 'GitHub';
     return (
 
       <div className="dashboard-bg">
         <Navbar />
+
         <div className="container">
 
-          {/* Location Name 
+          {/* Location Name
           <div className="row city-name">
             <div className="row">
               <div className="col-sm-12">
@@ -70,6 +75,14 @@ class Dashboard extends React.Component {
               </div>
             </div>
           </div>
+
+            {/* twitter share */}
+            <TwitterShareButton
+              url={'bestfitsearch.info'}
+              title={`San Francisco, CA has an AVERAGE health score according to CalEnvironment.com`}
+              className="share-button">
+             <TwitterIcon size={50} round />
+           </TwitterShareButton>
         </div>
     )
   }

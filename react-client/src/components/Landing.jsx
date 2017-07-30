@@ -13,6 +13,14 @@ const styles = {
   }
 };
 
+const validAddress = value => {
+  if (!(value && /^\d+\s[A-z]+\s[A-z]+,\s[A-z]+/.test(value))) {
+    return 'Please enter a street address followed by a comma and the city';
+  } else {
+    return undefined;
+  }
+};
+
 class Landing extends React.Component {
 
   onSubmit(input) {
@@ -41,6 +49,7 @@ class Landing extends React.Component {
                         type="text"
                         className="form-control"
                         placeholder="Address"
+                        validate={validAddress}
                         inputStyle={styles.textField}
                       />
                       <span className="input-group-btn">

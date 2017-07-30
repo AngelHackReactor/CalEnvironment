@@ -4,28 +4,34 @@ export const SET_LOCATION = 'set_location';
 export const GET_DATA = 'get_data';
 
 export const setLocation = (address) => {
-  var request = axios.get('/getCensusTract',{
-    params: {
-      addressInput: address
-    }
-  });
-
   return {
     type: SET_LOCATION,
-    payload: address
+    payload: new Promise((resolve, reject) => {
+      axios.get('/getCensusTract',{
+        params: {
+          addressInput: address
+        }
+      }).then(result => {
+        resolve(result.data);
+      })
+    })
   }
 };
 
 export const getData = (address) => {
-  var request = axios.get('/getStateData',{
-    params: {
-      addressInput: address
-    }
-  });  
-  console.log('requestGET TRACT', request)
+  // console.log('requestGET TRACT', address);
   return {
     type: GET_DATA,
-    payload: 'hi GET DATA'
+    payload: new Promise((resolve, reject) => {
+      axios.get('/getStateData', {
+        params: {
+          addressInput: address
+        }
+      }).then(result => {
+        // console.log('hit');
+        resolve(result);
+      })
+    })
   }
 
 };

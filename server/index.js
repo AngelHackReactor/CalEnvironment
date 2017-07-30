@@ -14,25 +14,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 
-
 /*******************************
 REACT ROUTER ROUTES
 *******************************/
 app.use('/', routes);
-
-// app.get('/', (req, res) => {
-//   res.sendFile(path.join(__dirname, '/../react-client/dist/index.html'));
-// });
-
-// app.get('/dashboard', (req, res) => {
-//   console.log('CalRawData', CalRawData[0])
-//   res.sendFile(path.join(__dirname, '/../react-client/dist/index.html'));
-// })
-
-// app.get('/landing', (req, res) => {
-//   res.sendFile(path.join(__dirname, '/../react-client/dist/index.html'));
-// })
-
 
 /*******************************
 Start Server on port 3000

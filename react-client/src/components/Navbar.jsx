@@ -16,7 +16,7 @@ class Navbar extends React.Component {
 
   componentDidMount() {
     $(window).scroll(function() {
-      if ($(this).scrollTop() > 200) {
+      if ($(this).scrollTop() > 20) {
         $('.fixed-top').addClass('opaque');
       } else {
         $('.fixed-top').removeClass('opaque');

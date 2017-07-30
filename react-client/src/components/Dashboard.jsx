@@ -42,17 +42,10 @@ class Dashboard extends React.Component {
 
           <div className="container">
 
-            {/* Location Name
-            <div className="row city-name">
-              <div className="row">
-                <div className="col-sm-12">
-                  <h1>San Fransico, CA</h1>
-                </div>
-              </div>
-            </div>*/}
               <div className="jumbotron city-name">
                 <h1>{this.props.location.city} , {this.props.location.county} County</h1>
               </div>
+
               {/* Air Card */}
               <div className="cards text-center">
 
@@ -160,17 +153,16 @@ class Dashboard extends React.Component {
               </div>
             </div>
 
+            {/* twitter share */}
+            <TwitterShareButton
+              url={'bestfitsearch.info'}
+              title={`San Francisco, CA has an AVERAGE health score according to CalEnvironment.com`}
+              className="share-button">
+             <TwitterIcon size={45} round />
+           </TwitterShareButton>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=r9.info@epa.gov" target="_blank"> <img className = "gmail-button" src="./ic_launcher.png"/> </a>
 
-
-              {/* twitter share */}
-              <TwitterShareButton
-                url={'bestfitsearch.info'}
-                title={`San Francisco, CA has an AVERAGE health score according to CalEnvironment.com`}
-                className="share-button">
-               <TwitterIcon size={45} round />
-             </TwitterShareButton>
-              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=r9.info@epa.gov" target="_blank"> <img className = "gmail-button" src="./ic_launcher.png"/> </a>
-          </div>
+        </div>
       )
     } else {
       return (<div>Loading...</div>)

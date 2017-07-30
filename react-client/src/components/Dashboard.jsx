@@ -177,6 +177,10 @@ class Dashboard extends React.Component {
                 </div>
               </div>
 
+            {/* Waste Card */}
+            <div className="container map">
+              <HeatMap />
+            </div>
 
 
             {/* Waste Card */}

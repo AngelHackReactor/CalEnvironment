@@ -192,3 +192,14 @@ body {
   left: 45%;
   top: 40%; 
 }
+
+.loading {
+  position: fixed; /* or absolute */
+  top: 30%;
+  left: 45%;
+
+}
+
+.map {
+  top: 100px;
+}

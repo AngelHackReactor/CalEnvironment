@@ -14,7 +14,7 @@ const styles = {
 };
 
 const validAddress = value => {
-  if (!(value && /^\d+\s[A-z]+\s[A-z]+,\s[A-z]+/.test(value))) {
+  if (!(value && /^\d+\s[A-z0-9]+\s[A-z]+,\s[A-z]+/.test(value))) {
     return 'Please enter a street address followed by a comma and the city';
   } else {
     return undefined;

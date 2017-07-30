@@ -1,5 +1,6 @@
 import React from 'react';
-
+import { connect } from 'react-redux';
+import { getData } from '../../actions';
 
 class Waste extends React.Component {
   constructor(props) {
@@ -7,6 +8,9 @@ class Waste extends React.Component {
   }
 
   componentDidMount() {
+  
+  this.props.getData();    
+  
   let chart = c3.generate({
     bindto: '#waste',
     data: {
@@ -48,11 +52,17 @@ class Waste extends React.Component {
   render() {
     return (
       <div>
-       <div id="waste"></div>
+       <div id="waste">{console.log('HELLOO INSIDE WASTE CARd',this.props.data)}</div>
       </div>
     )
   }
 }
 
 
-export default Waste;
+const mapStateToProps = ({ data }) => {
+  return {
+    data: data.data
+  }
+}
+
+export default connect(mapStateToProps, { getData })(Waste);

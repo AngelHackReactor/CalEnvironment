@@ -44,6 +44,7 @@ class Dashboard extends React.Component {
 
               <div className="jumbotron city-name">
                 <h1>{this.props.location.city} , {this.props.location.county} County</h1>
+                <h3>Census Tract ID: {this.props.location.census_tract_id}</h3>
               </div>
 
               {/* Air Card */}
@@ -60,6 +61,7 @@ class Dashboard extends React.Component {
                     <div className="card-block">
                       <Air />
                     </div>
+                    <p class="card-text">Your tract is better than {(100-pm25_PCT).toFixed(2)}% of the state</p>                    
                   </div>
 
                     <div className="card card-air text-center" style={style.cards}>
@@ -67,17 +69,17 @@ class Dashboard extends React.Component {
                         <div className="card-block">
                           <div className="row">
                             <div className="col-md-6">
-                              <p>State Median</p>
-                              <h1> 10.06 µg/m3</h1>
+                              <p>Your Tract</p>
+                              <h1>{pm25}</h1>
                             </div>
                             <div className="col-md-6">
-                              <p>Census Tract</p>
-                              {/*<h1> {pm25_PCT} </h1>*/}
-                              <h1> {pm25} µg/m3</h1>
+                              <p>State Median</p>
+                              <h1>10.06</h1>
                             </div>
                           </div>
                        </div>
-                     </div>
+                      <p>Annual mean Particulate Matter (PM2.5) concentrations</p>
+                      </div>
                 </div>
               </div>
               <br/>
@@ -93,10 +95,11 @@ class Dashboard extends React.Component {
 
                   <div className="card card-water text-center" style={style.cards}>
                     <h4 className="card-title"></h4>
-                    <p className="card-text"> Drinking Water </p>
+                    <p className="card-text"> Drinking Water </p>                    
                     <div className="card-block">
                       <Water />
                     </div>
+                    <p class="card-text">Your tract is better than {(100-drinkingWater_PCT).toFixed(2)}% of the state</p>
                   </div>
 
                     <div className="card card-water text-center" style={style.cards}>
@@ -104,16 +107,16 @@ class Dashboard extends React.Component {
                         <div className="card-block">
                           <div className="row">
                             <div className="col-md-6">
-                              <p>State Median</p>
-                              <h1> 342.78 µg/m3</h1>
+                              <p>Your Tract</p>
+                              <h1>{drinkingWater}</h1>
                             </div>
                             <div className="col-md-6">
-                              <p>Census Tract</p>
-                              {/*<h1> {drinkingWater_PCT} </h1>*/}
-                              <h1> {drinkingWater} µg/m3</h1>
+                              <p>State Median</p>
+                              <h1>342.78</h1>
                             </div>
                           </div>
-                       </div>
+                        </div>
+                        <p>Drinking water contaminant index for selected contaminants</p>                          
                      </div>
                 </div>
               </div>
@@ -134,6 +137,7 @@ class Dashboard extends React.Component {
                     <div className="card-block">
                       <Waste />
                     </div>
+                    <p class="card-text">Your tract is better than {(100-hazWaste_PCT).toFixed(2)}% of the state</p>
                   </div>
 
                     <div className="card card-waste text-center" style={style.cards}>
@@ -141,16 +145,16 @@ class Dashboard extends React.Component {
                         <div className="card-block">
                           <div className="row">
                             <div className="col-md-6">
-                              <p>State Median</p>
-                              <h1> 0.06 µg/m3</h1>
+                              <p>Your Tract</p>
+                              <h1>{hazWaste}</h1>
                             </div>
                             <div className="col-md-6">
-                              <p>Census Tract</p>
-                              {/*<h1> {hazWaste_PCT} </h1>*/}
-                              <h1> {hazWaste} µg/m3</h1>
+                              <p>State Median</p>
+                              <h1>0.06</h1>
                             </div>
                           </div>
                         </div>
+                        <p>Sum of weighted solid waste sites/facilities within buffered distances to populated blocks</p>                          
                     </div>
                 </div>
               </div>

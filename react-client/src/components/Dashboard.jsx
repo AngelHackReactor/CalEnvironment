@@ -6,36 +6,13 @@ import Air from './cards/Air.jsx';
 import Water from './cards/Water.jsx';
 import Waste from './cards/Waste.jsx';
 import Navbar from './Navbar.jsx';
-import {
-  ShareButtons,
-  ShareCounts,
-  generateShareIcon
-} from 'react-share';
+import {ShareButtons, generateShareIcon} from 'react-share';
 
-import {
-  ShareButtons,
-  ShareCounts,
-  generateShareIcon
-} from 'react-share';
-
-const {
-  FacebookShareButton,
-  GooglePlusShareButton,
-  LinkedinShareButton,
-  TwitterShareButton,
-  TelegramShareButton,
-  WhatsappShareButton,
-  PinterestShareButton,
-  VKShareButton,
-  OKShareButton,
-  RedditShareButton,
-} = ShareButtons;
-
-const FacebookIcon = generateShareIcon('facebook');
+const {TwitterShareButton} = ShareButtons;
 const TwitterIcon = generateShareIcon('twitter');
+
 const style = {
   cards: {
-
   }
 }
 
@@ -74,15 +51,6 @@ class Dashboard extends React.Component {
                         <p className="card-text">
                           <Air /></p>
                       </div>
-
-                      <FacebookShareButton
-                        url="http://safecalifornia.herokuapp.com"
-                        title="Join Github"
-                        className="Demo__some-network__share-button">
-                        <FacebookIcon
-                          size={32}
-                          round />
-                      </FacebookShareButton>
                     </div>
 
                     {/* Water Card */}

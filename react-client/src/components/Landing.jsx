@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import { TextField } from 'redux-form-material-ui';
-import { setLocation } from '../actions';
+import { hasGeo, setLocation, setCoords } from '../actions';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 
 const styles = {
@@ -22,10 +22,38 @@ const validAddress = value => {
 };
 
 class Landing extends React.Component {
+  componentDidMount() {
+    if (window.navigator.geolocation) {
+      this.props.hasGeo();
+      // window.navigator.geolocation.getCurrentPosition(position => {
+      //   console.log(position.coords.latitude, position.coords.longitude);
+      // })
+    }
+  }
 
   onSubmit(input) {
     this.props.setLocation(input.address);
-    this.props.history.push('/dashboard')
+    this.props.history.push('/dashboard');
+  }
+
+  submitCoords() {
+    window.navigator.geolocation.getCurrentPosition((position, err) => {
+      if (err) console.log('Geolocation error:', err);
+      this.props.setCoords(position.coords.latitude, position.coords.longitude);
+    });
+    this.props.history.push('/dashboard');
+  }
+
+  useGPS(props) {
+    return props.geoloc ?
+    <span className="input-group-btn">
+      <button
+        className="btn btn-default"
+        type="button"
+        onClick={props.submitCoords}
+      >Use GPS</button>
+    </span> :
+    null;
   }
 
   render() {
@@ -58,6 +86,10 @@ class Landing extends React.Component {
                           type="submit"
                         >Go</button>
                       </span>
+                      <this.useGPS
+                        geoloc={this.props.geoloc}
+                        submitCoords={this.submitCoords.bind(this)}
+                      />
                     </form>
                   </div>                                    
                 </div>
@@ -73,10 +105,13 @@ class Landing extends React.Component {
 
 const mapStateToProps = ({ location }) => {
   return {
-    location: location
+    geoloc: location.geoloc,
+    location: location.location,
+    lat: location.lat,
+    lon: location.lon
   };
 };
 
 export default reduxForm({
   form: 'setAddress'
-})(connect(mapStateToProps, { setLocation })(Landing));
+})(connect(mapStateToProps, { hasGeo, setLocation, setCoords })(Landing));

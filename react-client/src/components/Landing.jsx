@@ -6,10 +6,16 @@ import { TextField } from 'redux-form-material-ui';
 import { setLocation } from '../actions';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 
+const styles = {
+  textField: {
+    color: '#FFF',
+    fontWeight: 300
+  }
+};
+
 class Landing extends React.Component {
 
   onSubmit(input) {
-    console.log('address', input.address);
     this.props.setLocation(input.address);
     this.props.history.push('/dashboard')
   }
@@ -29,9 +35,20 @@ class Landing extends React.Component {
                 <div className="row">
                   <div className="col-sm-6 offset-sm-3">
                     <form className="input-group">
-                      <Field name="address" component={TextField} type="text" className="form-control" placeholder="Address"/>
+                      <Field
+                        name="address"
+                        component={TextField}
+                        type="text"
+                        className="form-control"
+                        placeholder="Address"
+                        inputStyle={styles.textField}
+                      />
                       <span className="input-group-btn">
-                        <button className="btn btn-default" type="button" onClick={handleSubmit(this.onSubmit.bind(this))}>Go</button>
+                        <button
+                          className="btn btn-default"
+                          type="button"
+                          onClick={handleSubmit(this.onSubmit.bind(this))}
+                        >Go</button>
                       </span>
                     </form>
                   </div>                                    

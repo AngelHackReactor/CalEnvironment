@@ -48,6 +48,7 @@ body {
 .form-control {
   border: none !important;
 }
+
 .form-control:focus {
   color: #fff;
   font-weight: 200;
@@ -66,6 +67,18 @@ body {
 .form-control::-webkit-input-placeholder {
   color: #999;
   font-weight: 200;
+}
+
+#about {
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+
+.footer {
+  height: 60px;
+  line-height: 60px; /* Vertically center the text there */
+  background-color: #424957;
+  color: white;
 }
 
 
@@ -111,10 +124,6 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 
-/*.dashboard-bg {
-  background: whitesmoke;
-}*/
-
 .cards {
   position: relative;
   top: 60px;
@@ -126,6 +135,28 @@ body {
   background: whitesmoke;
 }
 
+.share-button {
+  position:fixed;
+  left:20;
+  bottom:20;
+}
+
+.gmail-button {
+  position: fixed;
+  left: 75;
+  bottom: 20;
+}
+
+.units {
+  /*font-family: 'Raleway', sans-serif;*/
+  color: grey;
+  font-size: 1em;
+  font-weight: 200;
+}
+
+.dashboard-margin {
+  margin-bottom: 125px;
+}
 
 /* ==============================
  * MOBILE SPECIFIC PARAMS
@@ -153,15 +184,4 @@ body {
 }
 
 
-.share-button {
-  position:fixed;
-  left:20;
-  bottom:20;
 
-}
-
-.gmail-button {
-  position: fixed;
-  left: 75;
-  bottom: 20;
-}

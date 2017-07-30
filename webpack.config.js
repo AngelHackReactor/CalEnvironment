@@ -26,12 +26,6 @@ var config = {
         include: '/'
       }
     ]
-  },
-  resolve: {
-    alias: {
-      // From mapbox-gl-js README. Required for non-browserify bundlers (e.g. webpack):
-      'mapbox-gl$': path.resolve('./node_modules/mapbox-gl/dist/mapbox-gl.js')
-    }
   }
 
 };

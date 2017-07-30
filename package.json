@@ -30,6 +30,7 @@
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.2",
     "react-scripts": "1.0.10",
+    "react-share": "^1.15.0",
     "react-tap-event-plugin": "^2.0.1",
     "redis": "^2.7.1",
     "redis-session": "^0.1.0",

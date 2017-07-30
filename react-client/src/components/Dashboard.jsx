@@ -6,7 +6,6 @@ import Air from './cards/Air.jsx';
 import Water from './cards/Water.jsx';
 import Waste from './cards/Waste.jsx';
 import Navbar from './Navbar.jsx';
-import { FacebookButton, FacebookCount } from "react-social";
 
 import {
   ShareButtons,
@@ -94,7 +93,7 @@ class Dashboard extends React.Component {
               </div>
             </div>
           </div>
-          
+
             {/* twitter share */}
             <TwitterShareButton
               url={'bestfitsearch.info'}

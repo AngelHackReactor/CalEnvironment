@@ -114,3 +114,11 @@
 .shade {
   background: rgba(0, 0, 0, 0.5);
 }
+
+
+.share-button {
+  position:fixed;
+  left:20;
+  bottom:20;
+
+}

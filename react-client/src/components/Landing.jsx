@@ -97,6 +97,23 @@ class Landing extends React.Component {
             </div>
           </div>
         </div>
+
+        <section id="about" className="container">
+          <h2 className="text-center custom-font">ABOUT</h2>
+          <br/>
+          <br/>
+          <div className="text-center secondary-text">
+            <p>Safe California seeks to empower citizens and make Environmental Health Screening information easily accessible.
+            We believe that all Californians deserve to be informed on the state of the environment around their homes, schools, 
+            and workplaces in an easy and highly accessible manner.</p>
+            <p>All of our data is from <a target="_blank" href="https://oehha.ca.gov/calenviroscreen/report/calenviroscreen-version-20">CalEnviroScreen Version 2.0</a></p>
+          </div>
+        </section>
+
+        <footer>
+          
+        </footer>
+
       </div>
     )
   }

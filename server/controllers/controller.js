@@ -31,3 +31,7 @@ module.exports.getData = (req, res) => {
     Bookshelf.getData(req.body, res);
 }
 
+module.exports.getStateData = (req, res) => {
+    Bookshelf.getStateData(req, res);
+}
+

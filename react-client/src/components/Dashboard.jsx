@@ -56,7 +56,7 @@ class Dashboard extends React.Component {
                   </div>
                   <div className="card card-air text-center" style={style.cards}>
                     <h4 className="card-title"></h4>
-                    <p class="card-text"> Particulate Matter (PM2.5) </p>
+                    <p className="card-text"> Particulate Matter (PM2.5) </p>
                     <div className="card-block">
                       <Air />
                     </div>
@@ -93,7 +93,7 @@ class Dashboard extends React.Component {
 
                   <div className="card card-water text-center" style={style.cards}>
                     <h4 className="card-title"></h4>
-                    <p class="card-text"> Drinking Water </p>
+                    <p className="card-text"> Drinking Water </p>
                     <div className="card-block">
                       <Water />
                     </div>
@@ -130,7 +130,7 @@ class Dashboard extends React.Component {
 
                   <div className="card card-waste text-center" style={style.cards}>
                     <h4 className="card-title"></h4>
-                    <p class="card-text"> Solid Waste </p>
+                    <p className="card-text"> Solid Waste </p>
                     <div className="card-block">
                       <Waste />
                     </div>

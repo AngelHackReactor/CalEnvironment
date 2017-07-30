@@ -7,10 +7,7 @@ export default (state = {}, action) => {
     case SET_LOCATION:
       return Object.assign({}, state, { location: action.payload });
     case SET_COORDS:
-      return Object.assign({}, state, {
-        lat: action.payload.lat,
-        lon: action.payload.lon
-      });
+      return Object.assign({}, state, { location: action.payload });
     default:
       return state;
   }

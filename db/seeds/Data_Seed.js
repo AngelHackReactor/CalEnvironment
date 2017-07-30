@@ -18,11 +18,17 @@ exports.seed = function(knex, Promise) {
 	    obj['Census Tract'],
 	    obj['California County'],
 	    obj['Drinking Water'],
+	    obj['Drinking Water Pctl'],
 	    obj['PM2.5'],
+	    obj['PM2.5 Pctl'],
 	    obj['Diesel PM'],
+	    obj['Diesel PM Pctl'],
 	    obj['Groundwater Threats'],
+	    obj['Groundwater Threats Pctl'],
 	    obj['Solid Waste'],
+	    obj['Solid Waste Pctl'],
 	    obj['Haz. Waste'],
+	    obj['Haz. Waste Pctl'],
 	    zipcode,
 	    city
 	  ];
@@ -35,13 +41,19 @@ exports.seed = function(knex, Promise) {
 			census_tract_id: params[0],
 			county: params[1],
 			drinking_water: params[2],
-			pm_2point5: params[3],
-			diesel_pm: params[4],
-			groundwater_threats: params[5],
-			solid_waste: params[6],
-			hazardous_waste: params[7],
-			zip_code: params[8],
-			city: params[9]
+			drinking_water_percentile: params[3],
+			pm_2point5: params[4],
+			pm_2point5_percentile: params[5],
+			diesel_pm: params[6],
+			diesel_pm_percentile: params[7],
+			groundwater_threats: params[8],
+			groundwater_threat_percentile: params[9],
+			solid_waste: params[10],
+			solid_waste_percentile: params[11],
+			hazardous_waste: params[12],
+			hazardous_waste_percentile: params[13],
+			zip_code: params[14],
+			city: params[15]
 		}])
 
 	}))

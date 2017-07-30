@@ -78,7 +78,7 @@ class Dashboard extends React.Component {
                     <div className="card-block">
                       <Air />
                     </div>
-                    <p class="card-text">Your tract is better than {(100-pm25_PCT).toFixed(2)}% of the state</p>
+                    <p className="card-text">Your tract is better than {(100-pm25_PCT).toFixed(2)}% of the state</p>                    
                   </div>
 
                     <div className="card card-air text-center" style={style.cards}>
@@ -116,7 +116,7 @@ class Dashboard extends React.Component {
                     <div className="card-block">
                       <Water />
                     </div>
-                    <p class="card-text">Your tract is better than {(100-drinkingWater_PCT).toFixed(2)}% of the state</p>
+                    <p className="card-text">Your tract is better than {(100-drinkingWater_PCT).toFixed(2)}% of the state</p>
                   </div>
 
                     <div className="card card-water text-center" style={style.cards}>
@@ -154,7 +154,7 @@ class Dashboard extends React.Component {
                     <div className="card-block">
                       <Waste />
                     </div>
-                    <p class="card-text">Your tract is better than {(100-hazWaste_PCT).toFixed(2)}% of the state</p>
+                    <p className="card-text">Your tract is better than {(100-hazWaste_PCT).toFixed(2)}% of the state</p>
                   </div>
 
                     <div className="card card-waste text-center" style={style.cards}>
@@ -172,7 +172,7 @@ class Dashboard extends React.Component {
                           </div>
 
                         </div>
-                        <p>Sum of weighted haz waste sites/facilities within buffered distances to populated blocks</p>
+                        <p>Sum of weighted haz-waste facilities within distances to populated blocks</p>                          
                     </div>
                 </div>
               </div>

@@ -10,6 +10,10 @@ const styles = {
   textField: {
     color: '#FFF',
     fontWeight: 300
+  },
+  button: {
+    marginLeft: '5px',
+    marginRight: '10px'
   }
 };
 
@@ -25,9 +29,6 @@ class Landing extends React.Component {
   componentDidMount() {
     if (window.navigator.geolocation) {
       this.props.hasGeo();
-      // window.navigator.geolocation.getCurrentPosition(position => {
-      //   console.log(position.coords.latitude, position.coords.longitude);
-      // })
     }
   }
 
@@ -85,6 +86,7 @@ class Landing extends React.Component {
                         <button
                           className="btn btn-default"
                           type="submit"
+                          style={styles.button}
                         >
                           Go
                         </button>
@@ -115,7 +117,7 @@ class Landing extends React.Component {
 
         <footer className="footer">
           <div className="container">
-            <span>Safe California 2017</span>
+            <span className="custom-font font-thinner">SAFE CALIFORNIA 2017</span>
           </div>
         </footer>
 

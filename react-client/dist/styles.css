@@ -1,30 +1,34 @@
 /* ==============================
  * Landing page properties
  * ============================== */
-body {
-  background: black;
-}
 
-body:after {
-  content: "";
-  position: fixed;
-  top: 0;
-  height: 100vh;
-  left: 0;
-  right: 0;
-  z-index: -1;
-  opacity: 0.5;
-  background: url('https://res.cloudinary.com/jescobedo/image/upload/v1501363868/el-cap-compressor_vx0g6e.jpg') center center;
+.view {
+  background: url(https://res.cloudinary.com/jescobedo/image/upload/v1501363868/el-cap-compressor_vx0g6e.jpg)no-repeat center center fixed;
   -webkit-background-size: cover;
-     -moz-background-size: cover;
-       -o-background-size: cover;
-          background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
+.full-pg-img {
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+}
+
+.input-group,
 .hero,
 .slogan {
   font-family: 'Raleway', sans-serif;
   color: white;
+  position: relative;
+  top: 100px;
+}
+
+.input-group {
+  position: relative;
+  top: 125px;
 }
 
 .hero {
@@ -37,6 +41,41 @@ body:after {
   font-weight: 200;
 }
 
+
+.form-control:focus {
+  color: #fff;
+  font-weight: 200;
+}
+
+.form-control::-moz-placeholder {
+  color: #999;
+  font-weight: 200;
+}
+
+.form-control:-ms-input-placeholder {
+  color: #999;
+  font-weight: 200;
+}
+
+.form-control::-webkit-input-placeholder {
+  color: #999;
+  font-weight: 200;
+}
+
+
+/* ==============================
+ * Navbar properties
+ * ============================== */
+
+.navbar-hero {
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 0.2em;
+}
+
+/* ==============================
+ * Dashboard page properties
+ * ============================== */
+
 .dashboard-bg {
   background: whitesmoke;
   height: 100vh;
@@ -45,12 +84,27 @@ body:after {
 
 .cards {
   position: relative;
-  top: 100px;
+  top: 60px;
+}
+
+.city-name {
+  position: relative;
+  top: 80px;
+}
+
+/* ==============================
+ * MOBILE SPECIFIC PARAMS
+ * ============================== */
+@media only screen and (max-width: 768px) {
+  .hero {
+    font-size: 2em;
+  }
 }
 
 /* ==============================
  * CSS Utility
  * ============================== */
+
 .shade {
   background: rgba(0, 0, 0, 0.5);
 }

@@ -22,16 +22,18 @@ class Dashboard extends React.Component {
 
       <div className="dashboard-bg">
         <Navbar />
-        {/* Location Name */}
         <div className="container">
-          <div className="row">
-            <div className="col-12 col-sm-10 mx-auto">
-              <div className="row">
-                <div className="col-lg-12">
-                  <h1>San Fransico, CA</h1>
-                </div>
+
+          {/* Location Name 
+          <div className="row city-name">
+            <div className="row">
+              <div className="col-sm-12">
+                <h1>San Fransico, CA</h1>
               </div>
             </div>
+          </div>*/}
+            <div className="jumbotron city-name">
+              <h1>San Francisco, CA</h1>
             </div>
 
             <div className="cards">

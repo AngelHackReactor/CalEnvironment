@@ -12,14 +12,20 @@ export const setLocation = (address) => {
           addressInput: address
         }
       }).then(result => {
-        resolve(result.data);
+        axios.get('/getTractData',{
+          params: {
+            censusTract: result.data
+          }
+        }).then( result => {
+          console.log('RESULT AFTER DB',result.data)
+          resolve(result.data);
+        })    
       })
     })
   }
 };
 
 export const getData = (address) => {
-  // console.log('requestGET TRACT', address);
   return {
     type: GET_DATA,
     payload: new Promise((resolve, reject) => {

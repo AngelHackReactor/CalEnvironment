@@ -36,7 +36,6 @@ class Navbar extends React.Component {
                 <div className="collapse navbar-collapse" id="navbarNav1">
                     <ul className="navbar-nav ml-auto">
                       <li className="nav-item">
-                        <a className="nav-link" style={{color: 'grey'}} href="/reset">Home <span className="sr-only">(current)</span></a>
                       </li>
                     </ul>
                 </div>

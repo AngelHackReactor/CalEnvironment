@@ -14,7 +14,6 @@ module.exports.landing = (req, res) => {
 }
 
 module.exports.getCensusTract = (req, res) => {
-  // console.log('req.query', req.query)
   let addressStr = req.query.addressInput;
 
   request(`https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=${addressStr}&benchmark=Public_AR_Census2010&vintage=Census2010_Census2010&layer s=14&format=json`, 
@@ -30,10 +29,10 @@ module.exports.getCensusTract = (req, res) => {
 }
 
 module.exports.getTractData = (req, res) => {
-    Bookshelf.getData(req.body, res);
+    Bookshelf.getData(req.query.censusTract, res);
 }
 
 module.exports.getStateData = (req, res) => {
-    var state = Bookshelf.getStateData(req, res);
+    Bookshelf.getStateData(req, res);
 }
 

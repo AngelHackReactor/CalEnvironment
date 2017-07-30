@@ -8,8 +8,8 @@ const routes = require('./routes/routes.js');
 
 const app = express();
 
-app.use(express.static(__dirname + '../react-client/dist'));
-app.use(express.static('assets'))
+app.use(express.static(__dirname + '/../react-client/dist'));
+
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));

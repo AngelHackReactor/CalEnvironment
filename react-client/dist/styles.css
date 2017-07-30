@@ -41,7 +41,9 @@
   font-weight: 200;
 }
 
-
+.form-control {
+  border: none !important;
+}
 .form-control:focus {
   color: #fff;
   font-weight: 200;
@@ -75,6 +77,10 @@
 /* ==============================
  * Dashboard page properties
  * ============================== */
+
+.custom-font {
+  font-family: 'Raleway', sans-serif;
+}
 
 .dashboard-bg {
   background: whitesmoke;

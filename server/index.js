@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const CalRawData = require('../CalEnviroScreenRawData.json');
-
+const routes = require('./routes/routes.js');
 
 const app = express();
 
@@ -18,22 +18,20 @@ app.use(bodyParser.urlencoded({extended: true}));
 /*******************************
 REACT ROUTER ROUTES
 *******************************/
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '/../react-client/dist/index.html'));
-});
+app.use('/', routes);
 
-app.get('/dashboard', (req, res) => {
-  console.log('CalRawData', CalRawData[0])
-  res.sendFile(path.join(__dirname, '/../react-client/dist/index.html'));
-})
+// app.get('/', (req, res) => {
+//   res.sendFile(path.join(__dirname, '/../react-client/dist/index.html'));
+// });
 
-app.get('/landing', (req, res) => {
-  res.sendFile(path.join(__dirname, '/../react-client/dist/index.html'));
-})
+// app.get('/dashboard', (req, res) => {
+//   console.log('CalRawData', CalRawData[0])
+//   res.sendFile(path.join(__dirname, '/../react-client/dist/index.html'));
+// })
 
-
-
-
+// app.get('/landing', (req, res) => {
+//   res.sendFile(path.join(__dirname, '/../react-client/dist/index.html'));
+// })
 
 
 /*******************************

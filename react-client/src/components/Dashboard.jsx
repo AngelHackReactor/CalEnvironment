@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { connect } from 'react-redux';
+import { getData } from '../actions';
 import Air from './cards/Air.jsx';
 import Water from './cards/Water.jsx';
 import Waste from './cards/Waste.jsx';
@@ -14,11 +16,22 @@ const style = {
 
 
 class Dashboard extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+
   render() {
     return (
+<<<<<<< HEAD
+=======
+      <div className="container">
+
+        <div className="card-deck">
+          <div className="card" style={style.cards}>
+            <img className="card-img-top" src="//placehold.it/800x400" alt="Card image cap"/>
+            <div className="card-block">
+              <h4 className="card-title">{String(this.props.location)}</h4>
+              <p className="card-text"></p>
+            </div>
+          </div>
+>>>>>>> (feat) Add redux
 
       <div className="dashboard-bg">
         <Navbar />
@@ -75,5 +88,10 @@ class Dashboard extends React.Component {
   }
 }
 
+const mapStateToProps = ({ location }) => {
+  return {
+    location: location.location
+  }
+}
 
-export default Dashboard;
+export default connect(mapStateToProps, { getData })(Dashboard);

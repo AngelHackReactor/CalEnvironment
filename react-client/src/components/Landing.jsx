@@ -1,22 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { connect } from 'react-redux';
+import { Field, reduxForm } from 'redux-form';
+import { TextField } from 'redux-form-material-ui';
+import { setLocation } from '../actions';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 
 class Landing extends React.Component {
-  constructor(props) {
-    super(props);
 
-
+  onSubmit(input) {
+    console.log('address', input.address);
+    this.props.setLocation(input.address);
+    this.props.history.push('/dashboard')
   }
 
-  handleSearch() {
-    window.location = '/dashboard'
-  }
-  
   render() {
+    const { handleSubmit } = this.props;
+
     return (
       <div>
-
         {/* Full page bg with mask */}
         <div className="view hm-stylish-strong">
           <div className="full-pg-img">
@@ -26,24 +28,30 @@ class Landing extends React.Component {
               <div className="container">
                 <div className="row">
                   <div className="col-sm-6 offset-sm-3">
-                    <div className="input-group">
-                      <input type="text" className="form-control" placeholder="Check your home..."/>
+                    <form className="input-group">
+                      <Field name="address" component={TextField} type="text" className="form-control" placeholder="Address"/>
                       <span className="input-group-btn">
-                        <button className="btn btn-default" onClick={this.handleSearch.bind(this)} type="button">Go!</button>
+                        <button className="btn btn-default" type="button" onClick={handleSubmit(this.onSubmit.bind(this))}>Go</button>
                       </span>
-                    </div>
+                    </form>
                   </div>                                    
                 </div>
               </div>
             </div>
           </div>
         </div>
-        
       </div>
     )
   }
 }
 
 
+const mapStateToProps = ({ location }) => {
+  return {
+    location: location
+  };
+};
 
-export default Landing;
+export default reduxForm({
+  form: 'setAddress'
+})(connect(mapStateToProps, { setLocation })(Landing));

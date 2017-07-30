@@ -1,5 +1,6 @@
 import React from 'react';
-
+import { connect } from 'react-redux';
+import { getData } from '../../actions';
 
 class Air extends React.Component {
   constructor(props) {
@@ -7,6 +8,8 @@ class Air extends React.Component {
   }
 
   componentDidMount() {
+    let pm25_PCT = this.props.location.pm_2point5_percentile
+
     let chart = c3.generate({
       bindto: '#chart',
       data: {
@@ -43,7 +46,7 @@ class Air extends React.Component {
     setTimeout(function () {
       chart.load({
         columns: [
-         ['days', 100]
+         ['days', (100-pm25_PCT).toFixed(2)]
         ]
       });
     }, 1000);
@@ -60,4 +63,11 @@ class Air extends React.Component {
 }
 
 
-export default Air;
+const mapStateToProps = ({ location }) => {
+  return {
+    location: location.location
+  }
+}
+
+export default connect(mapStateToProps, { getData })(Air);
+

@@ -1,5 +1,6 @@
 import React from 'react';
-
+import { connect } from 'react-redux';
+import { getData } from '../../actions';
 
 class Water extends React.Component {
   constructor(props) {
@@ -7,6 +8,8 @@ class Water extends React.Component {
   }
 
   componentDidMount() {
+    let drinkingWater_PCT = this.props.location.drinking_water_percentile 
+
     let chart = c3.generate({
       bindto: '#water',
       data: {
@@ -43,7 +46,7 @@ class Water extends React.Component {
     setTimeout(function () {
     chart.load({
        columns: [
-           ['days', 100-30]
+           ['days', (100-drinkingWater_PCT).toFixed(2)]
        ]
     });
     }, 1000);
@@ -57,5 +60,10 @@ class Water extends React.Component {
   }
 }
 
+const mapStateToProps = ({ location }) => {
+  return {
+    location: location.location
+  }
+}
 
-export default Water;
+export default connect(mapStateToProps, { getData })(Water);

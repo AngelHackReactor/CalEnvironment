@@ -8,8 +8,8 @@ class Waste extends React.Component {
   }
 
   componentDidMount() {
-  console.log('this.props.location', this.props.location)
-  this.props.getData(this.props.location);
+
+    let hazWaste_PCT = this.props.location.hazardous_waste_percentile
 
   let chart = c3.generate({
     bindto: '#waste',
@@ -47,7 +47,7 @@ class Waste extends React.Component {
    setTimeout(function () {
      chart.load({
          columns: [
-             ['days', 100-15]
+             ['days', (100-hazWaste_PCT).toFixed(2)]
          ]
      });
    }, 1000);
@@ -58,16 +58,14 @@ class Waste extends React.Component {
   render() {
     return (
       <div>
-       <div id="waste">{console.log('HELLOO INSIDE WASTE CARd',this.props.data)}</div>
+       <div id="waste"></div>
       </div>
     )
   }
 }
 
-
-const mapStateToProps = ({ data, location }) => {
+const mapStateToProps = ({ location }) => {
   return {
-    data: data.data,
     location: location.location
   }
 }

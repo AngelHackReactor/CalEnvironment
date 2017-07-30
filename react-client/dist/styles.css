@@ -72,6 +72,7 @@
 .navbar-hero {
   font-family: 'Raleway', sans-serif;
   letter-spacing: 0.2em;
+  color: gray !important;
 }
 
 /* ==============================
@@ -98,10 +99,19 @@
   top: 80px;
 }
 
+
 /* ==============================
  * MOBILE SPECIFIC PARAMS
  * ============================== */
 @media only screen and (max-width: 768px) {
+  .navbar {
+    background-color: #B6B9BE !important;
+  }
+
+  .navbar-hero {
+    color: black !important;
+  }
+
   .hero {
     font-size: 2em;
   }

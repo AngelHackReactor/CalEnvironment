@@ -177,13 +177,8 @@ class Dashboard extends React.Component {
                 </div>
               </div>
 
-            {/* Waste Card */}
-            <div className="container map">
-              <HeatMap />
-            </div>
 
-
-            {/* Waste Card */}
+            {/* Map Card */}
             <div className="container map">
               {this.state.mapped ? <HeatMap /> : null}
             </div>

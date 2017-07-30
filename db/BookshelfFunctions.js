@@ -14,7 +14,7 @@ module.exports = {
 	},
 	getStateData: (body, res) => {
 		Data.
-		wheree({census_tract_id: 123}).fetch()
+		where({census_tract_id: 123}).fetch()
 		.then(data => {
 			res.send(data);
 		})

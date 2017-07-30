@@ -35,9 +35,8 @@ class Dashboard extends React.Component {
       let groundwater_PCT = this.props.location.groundwater_threat_percentile
       let hazWaste_PCT = this.props.location.hazardous_waste_percentile
       let solWaste_PCT = this.props.location.solid_waste_percentile
-
+      
       return (
-
         <div className="dashboard-bg">
           <Navbar />
 

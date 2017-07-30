@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
 
 router.get('/dashboard', controller.dashboard)
 router.get('/landing', controller.landing)
-router.post('/getCensusTract', controller.getCensusTract)
+router.get('/getCensusTract', controller.getCensusTract)
 
 //routes for retrieving data from DB
 router.get('/dataRetrieval', controller.getData);

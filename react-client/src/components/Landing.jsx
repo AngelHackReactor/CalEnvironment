@@ -30,7 +30,7 @@ class Landing extends React.Component {
           <div className="full-pg-img">
             <div className="mask">
               <h1 className="hero display-4 text-center">SAFE CALIFORNIA</h1>
-              <p className="slogan text-center">Search your neighborhood.</p>
+              <p className="slogan text-center">Knowledge is power. Explore your neighborhood.</p>
               <div className="container">
                 <div className="row">
                   <div className="col-sm-6 offset-sm-3">

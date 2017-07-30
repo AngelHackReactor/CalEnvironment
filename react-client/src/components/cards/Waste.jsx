@@ -1,5 +1,6 @@
 import React from 'react';
-
+import { connect } from 'react-redux';
+import { getData } from '../../actions';
 
 class Waste extends React.Component {
   constructor(props) {
@@ -7,40 +8,49 @@ class Waste extends React.Component {
   }
 
   componentDidMount() {
+  
+  this.props.getData();    
+  
   let chart = c3.generate({
     bindto: '#waste',
     data: {
       columns: [
-        ['local', 30, 200, 100, 400, 150, 25],
-        ['average', 130, 100, 140, 200, 150, 50]
+          ['days', 0]
       ],
-      type: 'bar'
-    },
-    size: {
-      height: 200
-    },
-    axis: {
-      y: {
+      type: 'bar',
+      labels: true
+      },
+      size: {
+        height: 100
+      },
+      axis: {
+        rotated: true,
+        x: {
+            show: false
+        },
+        y: {
+            show: false,
+            max: 100
+        }
+      },
+      legend: {
+        hide: true
+      },
+      tooltip: {
         show: false
+      },
+      bar: {
+        width: 50
       }
-    }
-  });
+    });
 
-  setTimeout(function () {
-    chart.transform('local', 'average');
-  }, 1000);
-
-  setTimeout(function () {
-    chart.transform('local', 'average');
-  }, 2000);
-
-  setTimeout(function () {
-    chart.transform('bar');
-  }, 3000);
-
-  setTimeout(function () {
-    chart.transform('area');
-  }, 4000);
+   setTimeout(function () {
+     chart.load({
+         columns: [
+             ['days', 100-15]
+         ]
+     });
+   }, 1000);
   }
 
 
@@ -48,11 +58,17 @@ class Waste extends React.Component {
   render() {
     return (
       <div>
-       <div id="waste"></div>
+       <div id="waste">{console.log('HELLOO INSIDE WASTE CARd',this.props.data)}</div>
       </div>
     )
   }
 }
 
 
-export default Waste;
+const mapStateToProps = ({ data }) => {
+  return {
+    data: data.data
+  }
+}
+
+export default connect(mapStateToProps, { getData })(Waste);

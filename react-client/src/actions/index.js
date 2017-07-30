@@ -3,6 +3,7 @@ import axios from 'axios';
 export const HAS_GEO = 'has_geo';
 export const SET_LOCATION = 'set_location';
 export const SET_COORDS = 'set_coords';
+export const SAVE_COORDS = 'save_coords';
 export const GET_DATA = 'get_data';
 
 export const hasGeo = () => ({ type: HAS_GEO });
@@ -49,6 +50,16 @@ export const setCoords = (lat, lon) => {
         })
       })
     })
+  }
+}
+
+export const saveCoords = (lat, lon) => {
+  return {
+    type: SAVE_COORDS,
+    payload: {
+      lat: lat,
+      lon: lon
+    }
   }
 }
 

@@ -7,6 +7,7 @@ import Water from './cards/Water.jsx';
 import Waste from './cards/Waste.jsx';
 import Navbar from './Navbar.jsx';
 import {ShareButtons, generateShareIcon} from 'react-share';
+import Icon from 'react-simple-icons'
 
 const {TwitterShareButton} = ShareButtons;
 const TwitterIcon = generateShareIcon('twitter');
@@ -75,14 +76,14 @@ class Dashboard extends React.Component {
               </div>
             </div>
           </div>
-
             {/* twitter share */}
             <TwitterShareButton
               url={'bestfitsearch.info'}
               title={`San Francisco, CA has an AVERAGE health score according to CalEnvironment.com`}
               className="share-button">
-             <TwitterIcon size={50} round />
+             <TwitterIcon size={45} round />
            </TwitterShareButton>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=r9.info@epa.gov" target="_blank"> <img className = "gmail-button" src="./ic_launcher.png"/> </a>
         </div>
     )
   }

@@ -145,3 +145,9 @@
   bottom:20;
 
 }
+
+.gmail-button {
+  position: fixed;
+  left: 75;
+  bottom: 20;
+}

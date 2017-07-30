@@ -19,6 +19,11 @@ var config = {
         query: {
             presets: ['react', 'es2015']
          }
+      },
+      { 
+        test: /\.png$/, 
+        loader: 'file',
+        include: './'
       }
     ]
   }

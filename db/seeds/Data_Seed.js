@@ -6,9 +6,12 @@ exports.seed = function(knex, Promise) {
 	// 	census_tract_id: 2,
 	// 	drinking_water: 5
 	// }])
-	CalRawData.forEach ((obj) => {
+	return Promise.all(Promise.each (CalRawData, (obj) => {
 	  let zip_city = obj['Location 1'].split('\n')[0];
 	  let zipcode = Number(zip_city.slice(-5));
+	  if (!zipcode) {
+	  	zipcode = Number(zip_city.slice(-2));
+	  }
 	  let city = zip_city.slice(0,zip_city.length-6);
 
 	  let params = [
@@ -23,8 +26,12 @@ exports.seed = function(knex, Promise) {
 	    zipcode,
 	    city
 	  ];
-
-	  return knex('census_tracts').insert([{
+	  for (var i = 0; i < params.length; i++) {
+	  	if (params[i] === "NaN" || params[i] === "NA" || params[i] === NaN) {
+	  		params[i] = null
+	  	}
+	  }
+	  	return knex('census_tracts').insert([{
 			census_tract_id: params[0],
 			county: params[1],
 			drinking_water: params[2],
@@ -36,7 +43,9 @@ exports.seed = function(knex, Promise) {
 			zip_code: params[8],
 			city: params[9]
 		}])
-	  });  
+
+	}))
+
 }
 
 

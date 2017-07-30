@@ -68,11 +68,12 @@ class Dashboard extends React.Component {
                           <div className="row">
                             <div className="col-md-6">
                               <p>State Median</p>
-                              <h1> 10.06 </h1>
+                              <h1> 10.06 µg/m3</h1>
                             </div>
                             <div className="col-md-6">
                               <p>Census Tract</p>
-                              <h1> {pm25_PCT} </h1>
+                              {/*<h1> {pm25_PCT} </h1>*/}
+                              <h1> {pm25} µg/m3</h1>
                             </div>
                           </div>
                        </div>
@@ -104,11 +105,12 @@ class Dashboard extends React.Component {
                           <div className="row">
                             <div className="col-md-6">
                               <p>State Median</p>
-                              <h1> 342.78 </h1>
+                              <h1> 342.78 µg/m3</h1>
                             </div>
                             <div className="col-md-6">
                               <p>Census Tract</p>
-                              <h1> {drinkingWater_PCT} </h1>
+                              {/*<h1> {drinkingWater_PCT} </h1>*/}
+                              <h1> {drinkingWater} µg/m3</h1>
                             </div>
                           </div>
                        </div>
@@ -140,18 +142,19 @@ class Dashboard extends React.Component {
                           <div className="row">
                             <div className="col-md-6">
                               <p>State Median</p>
-                              <h1> 0.06 </h1>
+                              <h1> 0.06 µg/m3</h1>
                             </div>
                             <div className="col-md-6">
                               <p>Census Tract</p>
-                              <h1> {hazWaste_PCT} </h1>
+                              {/*<h1> {hazWaste_PCT} </h1>*/}
+                              <h1> {hazWaste} µg/m3</h1>
                             </div>
                           </div>
-                       </div>
-                     </div>
+                        </div>
+                    </div>
                 </div>
               </div>
-            </div>
+
 
             {/* twitter share */}
             <TwitterShareButton
@@ -159,9 +162,10 @@ class Dashboard extends React.Component {
               title={`San Francisco, CA has an AVERAGE health score according to CalEnvironment.com`}
               className="share-button">
              <TwitterIcon size={45} round />
-           </TwitterShareButton>
+            </TwitterShareButton>
             <a href="https://mail.google.com/mail/?view=cm&fs=1&to=r9.info@epa.gov" target="_blank"> <img className = "gmail-button" src="./ic_launcher.png"/> </a>
 
+          </div>
         </div>
       )
     } else {

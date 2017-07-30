@@ -2,6 +2,10 @@
  * Landing page properties
  * ============================== */
 
+body {
+  background: whitesmoke;
+}
+
 .view {
   background: url(https://res.cloudinary.com/jescobedo/image/upload/v1501363868/el-cap-compressor_vx0g6e.jpg)no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -107,9 +111,9 @@
   font-family: 'Raleway', sans-serif;
 }
 
-.dashboard-bg {
+/*.dashboard-bg {
   background: whitesmoke;
-}
+}*/
 
 .cards {
   position: relative;

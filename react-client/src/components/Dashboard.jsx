@@ -185,8 +185,8 @@ class Dashboard extends React.Component {
 
             {/* twitter share */}
             <TwitterShareButton
-              url={'bestfitsearch.info'}
-              title={`San Francisco, CA has an AVERAGE health score according to CalEnvironment.com`}
+              url={'google.com'}
+              title={this.props.location.city+` has an AVERAGE health score according to CalEnvironment.com`}
               className="share-button">
              <TwitterIcon size={45} round />
             </TwitterShareButton>

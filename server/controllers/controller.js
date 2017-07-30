@@ -20,6 +20,8 @@ module.exports.getCensusTract = (req, res) => {
   request(`https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=${addressStr}&benchmark=Public_AR_Census2010&vintage=Census2010_Census2010&layer s=14&format=json`, 
     (err, resp, body) => {
       let censusTract = JSON.parse(body).result.addressMatches[0].geographies["Census Blocks"][0].GEOID
+      let censusTractLen = JSON.parse(body).result.addressMatches[0].geographies["Census Blocks"][0].GEOID.length;
+      censusTract = censusTract.slice(0,censusTractLen-4); //removes leading 0 from API call
       censusTract = Number(censusTract); //removes leading 0 from API call
       console.log('body:', censusTract); 
 
@@ -27,11 +29,11 @@ module.exports.getCensusTract = (req, res) => {
   })
 }
 
-module.exports.getData = (req, res) => {
+module.exports.getTractData = (req, res) => {
     Bookshelf.getData(req.body, res);
 }
 
 module.exports.getStateData = (req, res) => {
-    Bookshelf.getStateData(req, res);
+    var state = Bookshelf.getStateData(req, res);
 }
 

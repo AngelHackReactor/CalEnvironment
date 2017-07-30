@@ -12,7 +12,7 @@ router.get('/landing', controller.landing)
 router.get('/getCensusTract', controller.getCensusTract)
 
 //routes for retrieving data from DB
-router.get('/dataRetrieval', controller.getData);
-router.get('/stateDataRetrieval', controller.getStateData);
+router.get('/getTractData', controller.getTractData);
+router.get('/getStateData', controller.getStateData);
 
 module.exports = router;

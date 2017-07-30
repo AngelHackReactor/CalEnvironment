@@ -8,8 +8,8 @@ class Waste extends React.Component {
   }
 
   componentDidMount() {
-  
-  this.props.getData();    
+  console.log('this.props.location', this.props.location)
+  this.props.getData(this.props.location);    
   
   let chart = c3.generate({
     bindto: '#waste',
@@ -65,9 +65,10 @@ class Waste extends React.Component {
 }
 
 
-const mapStateToProps = ({ data }) => {
+const mapStateToProps = ({ data, location }) => {
   return {
-    data: data.data
+    data: data.data,
+    location: location.location
   }
 }
 

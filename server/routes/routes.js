@@ -10,6 +10,7 @@ router.get('/', (req, res) => {
 router.get('/dashboard', controller.dashboard)
 router.get('/landing', controller.landing)
 router.get('/getCensusTract', controller.getCensusTract)
+router.get('/getCensusTractByCoords', controller.getCensusTractByCoords)
 
 //routes for retrieving data from DB
 router.get('/getTractData', controller.getTractData);

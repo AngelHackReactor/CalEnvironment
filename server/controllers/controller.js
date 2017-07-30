@@ -28,6 +28,22 @@ module.exports.getCensusTract = (req, res) => {
   })
 }
 
+module.exports.getCensusTractByCoords = (req, res) => {
+  let lat = req.query.lat;
+  let lon = req.query.lon;
+
+  request(`https://geocoding.geo.census.gov/geocoder/geographies/coordinates?x=${lat}&y=${lon}&benchmark=Public_AR_Census2010&vintage=Census2010_Census2010&layer s=14&format=json`,
+    (err, resp, body) => {
+      let censusTract = JSON.parse(body).result.addressMatches[0].geographies["Census Blocks"][0].GEOID
+      let censusTractLen = JSON.parse(body).result.addressMatches[0].geographies["Census Blocks"][0].GEOID.length;
+      censusTract = censusTract.slice(0,censusTractLen-4); //removes leading 0 from API call
+      censusTract = Number(censusTract); //removes leading 0 from API call
+      console.log('body:', censusTract);
+
+      res.send(JSON.stringify(censusTract));
+    });
+}
+
 module.exports.getTractData = (req, res) => {
     Bookshelf.getData(req.query.censusTract, res);
 }

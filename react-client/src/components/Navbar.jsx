@@ -32,7 +32,7 @@ class Navbar extends React.Component {
                 <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav1" aria-controls="navbarNav1" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
-                <a className="navbar-brand" style={{color: 'grey'}} href="/"><strong>SAFE CALIFORNIA</strong></a>
+                <a className="navbar-brand navbar-hero" style={{color: 'grey'}} href="/">SAFE CALIFORNIA</a>
                 <div className="collapse navbar-collapse" id="navbarNav1">
                     <ul className="navbar-nav ml-auto">
                       <li className="nav-item">

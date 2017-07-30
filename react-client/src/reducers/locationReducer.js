@@ -1,4 +1,4 @@
-import { HAS_GEO, SET_LOCATION, SET_COORDS } from '../actions/index';
+import { HAS_GEO, SET_LOCATION, SET_COORDS, SAVE_COORDS } from '../actions/index';
 
 export default (state = {}, action) => {
   switch (action.type) {
@@ -8,6 +8,11 @@ export default (state = {}, action) => {
       return Object.assign({}, state, { location: action.payload });
     case SET_COORDS:
       return Object.assign({}, state, { location: action.payload });
+    case SAVE_COORDS:
+      return Object.assign({}, state, {
+        lat: action.payload.lat,
+        lon: action.payload.lon
+      });
     default:
       return state;
   }

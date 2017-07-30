@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import { TextField } from 'redux-form-material-ui';
-import { hasGeo, setLocation, setCoords } from '../actions';
+import { hasGeo, setLocation, setCoords, saveCoords } from '../actions';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 
 const styles = {
@@ -40,6 +40,7 @@ class Landing extends React.Component {
     window.navigator.geolocation.getCurrentPosition((position, err) => {
       if (err) console.log('Geolocation error:', err);
       this.props.setCoords(position.coords.latitude, position.coords.longitude);
+      this.props.saveCoords(position.coords.latitude, position.coords.longitude);
     });
     this.props.history.push('/dashboard');
   }
@@ -127,10 +128,10 @@ class Landing extends React.Component {
 const mapStateToProps = ({ location }) => {
   return {
     geoloc: location.geoloc,
-    location: location.location
+    location: location.location,
   };
 };
 
 export default reduxForm({
   form: 'setAddress'
-})(connect(mapStateToProps, { hasGeo, setLocation, setCoords })(Landing));
+})(connect(mapStateToProps, { hasGeo, setLocation, setCoords, saveCoords })(Landing));

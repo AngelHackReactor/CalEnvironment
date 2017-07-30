@@ -106,9 +106,7 @@ class Landing extends React.Component {
 const mapStateToProps = ({ location }) => {
   return {
     geoloc: location.geoloc,
-    location: location.location,
-    lat: location.lat,
-    lon: location.lon
+    location: location.location
   };
 };
 

@@ -43,7 +43,7 @@ export const setCoords = (lat, lon) => {
           params: {
             censusTract: result.data
           }
-        }).then( result => {
+        }).then(result => {
           console.log('RESULT AFTER DB',result.data)
           resolve(result.data);
         })

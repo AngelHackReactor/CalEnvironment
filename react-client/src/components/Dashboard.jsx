@@ -38,14 +38,14 @@ class Dashboard extends React.Component {
             </div>
           </div>*/}
             <div className="jumbotron city-name">
-              <h1>San Francisco, CA</h1>
+              <h1>{this.props.location}</h1>
             </div>
 
             <div className="cards">
                   {/* Air Card */}
                   <div className="card-deck">
-                    <div className="card" style={style.cards}>
-                      <img className="card-img-top mx-auto d-block" src="https://res.cloudinary.com/jescobedo/image/upload/v1501369711/air_duuqdf.svg" width="200px" alt="Card image cap"/>
+                    <div className="card card-air" style={style.cards}>
+                      <img className="card-img-top mx-auto d-block" src="https://res.cloudinary.com/jescobedo/image/upload/v1501393341/air_jcqxns.svg" width="200px" alt="Card image cap"/>
                       <div className="card-block">
                         <h4 className="card-title text-center">Air</h4>
                         <p className="card-text">
@@ -54,8 +54,8 @@ class Dashboard extends React.Component {
                     </div>
 
                     {/* Water Card */}
-                    <div className="card" style={style.cards}>
-                      <img className="card-img-top mx-auto d-block" src="https://res.cloudinary.com/jescobedo/image/upload/v1501369805/water_ypu3ev.svg" width="200px" alt="Card image cap"/>
+                    <div className="card card-water" style={style.cards}>
+                      <img className="card-img-top mx-auto d-block" src="https://res.cloudinary.com/jescobedo/image/upload/v1501393344/water_tnf1h1.svg" width="200px" alt="Card image cap"/>
                       <div className="card-block">
                         <h4 className="card-title text-center">Water</h4>
                         <p className="card-text">
@@ -64,8 +64,8 @@ class Dashboard extends React.Component {
                     </div>
 
                     {/* Waste Card */}
-                    <div className="card" style={style.cards}>
-                      <img className="card-img-top mx-auto d-block" src="https://res.cloudinary.com/jescobedo/image/upload/v1501369896/waste_tjfsv3.svg" width="200px"alt="Card image cap"/>
+                    <div className="card card-waste" style={style.cards}>
+                      <img className="card-img-top mx-auto d-block" src="https://res.cloudinary.com/jescobedo/image/upload/v1501393348/waste_evxmx6.svg" width="200px"alt="Card image cap"/>
                       <div className="card-block">
                         <h4 className="card-title text-center">Waste</h4>
                         <p className="card-text">

@@ -29,16 +29,7 @@ class Navbar extends React.Component {
        <div className="Navigation">
         <nav className="navbar navbar-toggleable-md navbar-light fixed-top transition">
             <div className="container">
-                <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav1" aria-controls="navbarNav1" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
                 <a className="navbar-brand navbar-hero" href="/">SAFE CALIFORNIA</a>
-                <div className="collapse navbar-collapse" id="navbarNav1">
-                    <ul className="navbar-nav ml-auto">
-                      <li className="nav-item">
-                      </li>
-                    </ul>
-                </div>
             </div>
         </nav>
       </div>

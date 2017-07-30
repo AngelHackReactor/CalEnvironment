@@ -53,7 +53,7 @@ class Landing extends React.Component {
         className="btn btn-default"
         type="button"
         onClick={props.submitCoords}
-      >Use GPS</button>
+      >GPS</button>
     </span> :
     null;
   }

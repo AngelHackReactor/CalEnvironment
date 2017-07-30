@@ -198,7 +198,7 @@ class Dashboard extends React.Component {
     } else {
       return (
         <div className="loading">
-          <Loader color="#26A65B" size="20px"/>
+          <Loader color="#424957" size="20px"/>
         </div>
       )
     }

@@ -8,7 +8,7 @@ body {
 body:after {
   content: "";
   position: fixed;
-  top: 0;       
+  top: 0;
   height: 100vh;
   left: 0;
   right: 0;
@@ -18,7 +18,7 @@ body:after {
   -webkit-background-size: cover;
      -moz-background-size: cover;
        -o-background-size: cover;
-          background-size: cover; 
+          background-size: cover;
 }
 
 .hero,
@@ -41,6 +41,11 @@ body:after {
   background: whitesmoke;
   height: 100vh;
   width: 100vw;
+}
+
+.cards {
+  position: relative;
+  top: 100px;
 }
 
 /* ==============================

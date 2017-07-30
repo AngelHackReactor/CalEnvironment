@@ -43,6 +43,7 @@ class Dashboard extends React.Component {
 
       <div className="dashboard-bg">
         <Navbar />
+
         <div className="container">
 
           {/* Location Name

@@ -11,39 +11,42 @@ class Air extends React.Component {
       bindto: '#chart',
       data: {
         columns: [
-          ['local', 30, 200, 100, 400, 150, 25],
-          ['average', 130, 100, 140, 200, 150, 50]
+            ['days', 0]
         ],
-        type: 'bar'
+        type: 'bar',
+        labels: true
       },
       size: {
-        height: 200
+        height: 100
       },
       axis: {
+        rotated: true,
+        x: {
+            show: false
+        },
         y: {
-          show: false
+            show: false,
+            max: 100
         }
+      },
+      legend: {
+        hide: true
+      },
+      tooltip: {
+        show: false
+      },
+      bar: {
+        width: 50
       }
     });
 
     setTimeout(function () {
-      chart.transform('local', 'average');
+      chart.load({
+        columns: [
+         ['days', 100]
+        ]
+      });
     }, 1000);
-
-    setTimeout(function () {
-      chart.transform('local', 'average');
-    }, 2000);
-
-    setTimeout(function () {
-      chart.transform('bar');
-    }, 3000);
-
-    setTimeout(function () {
-      chart.transform('area');
-    }, 4000);
-    setTimeout(function () {
-      chart.transform('line');
-    }, 5000);
   }
 
 

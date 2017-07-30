@@ -34,7 +34,7 @@ class Landing extends React.Component {
               <div className="container">
                 <div className="row">
                   <div className="col-sm-6 offset-sm-3">
-                    <form className="input-group">
+                    <form className="input-group" onSubmit={handleSubmit(this.onSubmit.bind(this))}>
                       <Field
                         name="address"
                         component={TextField}
@@ -46,8 +46,7 @@ class Landing extends React.Component {
                       <span className="input-group-btn">
                         <button
                           className="btn btn-default"
-                          type="button"
-                          onClick={handleSubmit(this.onSubmit.bind(this))}
+                          type="submit"
                         >Go</button>
                       </span>
                     </form>

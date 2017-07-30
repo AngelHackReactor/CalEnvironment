@@ -28,6 +28,7 @@
     "react-dom": "^15.6.1",
     "react-router-dom": "^4.1.2",
     "react-scripts": "1.0.10",
+    "react-share": "^1.15.0",
     "redis": "^2.7.1",
     "redis-session": "^0.1.0",
     "webpack": "^3.4.1"

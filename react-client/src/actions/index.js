@@ -16,10 +16,16 @@ export const setLocation = (address) => {
   }
 };
 
-export const getData = () => {
-    return {
-      type: GET_DATA,
-      payload: 'hi GET DATA'
+export const getData = (address) => {
+  var request = axios.get('/getStateData',{
+    params: {
+      addressInput: address
     }
+  });  
+  console.log('requestGET TRACT', request)
+  return {
+    type: GET_DATA,
+    payload: 'hi GET DATA'
+  }
 
 };

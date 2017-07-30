@@ -9,6 +9,6 @@ router.get('/', (req, res) => {
 
 router.get('/dashboard', controller.dashboard)
 router.get('/landing', controller.landing)
-router.get('/getCensusTract', controller.getCensusTract)
+router.post('/getCensusTract', controller.getCensusTract)
 
 module.exports = router;

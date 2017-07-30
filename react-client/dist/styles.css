@@ -75,6 +75,18 @@
   color: gray !important;
 }
 
+.card-air {
+  background: rgba(251, 172, 61, 0.1);
+}
+
+.card-water {
+  background: rgba(35, 194, 225, 0.1);
+}
+
+.card-waste {
+  background: rgba(0, 193, 94, 0.1);
+}
+
 /* ==============================
  * Dashboard page properties
  * ============================== */
@@ -97,6 +109,7 @@
 .city-name {
   position: relative;
   top: 80px;
+  background: whitesmoke;
 }
 
 
@@ -105,7 +118,7 @@
  * ============================== */
 @media only screen and (max-width: 768px) {
   .navbar {
-    background-color: #B6B9BE !important;
+    background-color: whitesmoke !important;
   }
 
   .navbar-hero {

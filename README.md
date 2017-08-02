@@ -1,5 +1,5 @@
 # Safe California
-*Winner of the 2017 Angelhack Silicon Valley NEHA Challenge*
+*Winner of the 2017 AngelHack Silicon Valley National Environmental Health Association Challenge*
 
 Safe California seeks to empower citizens and make Environmental Health Screening information easily accessible. We believe that all Californians deserve to be informed on the state of the environment around their homes, schools, and workplaces in an easy and highly accessible manner.
 
